@@ -14,10 +14,7 @@ window-rule {
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    //a - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id="firefox" title="^Picture-in-Picture$"
     open-floating true
 }
 
@@ -31,6 +28,7 @@ window-rule {
     block-out-from "screencast"
 }
 
+// block mako notifications from screenshots
 layer-rule {
     match namespace="^notifications$"
     block-out-from "screencast"
@@ -42,6 +40,7 @@ layer-rule {
 
 window-rule {
     match app-id="^clipse$"
+    match app-id="^calcure$"
     open-floating true
     open-maximized false
     open-fullscreen false
@@ -97,12 +96,13 @@ window-rule {
 }
 
 window-rule {
-    match app-id="cs2"
+    match app-id="^cs2$"
+    match app-id="^steam$"
     open-on-workspace "3"
 }
 
 window-rule {
-    match app-id="firefox"
+    match app-id="^firefox$"
     open-on-workspace "1"
 }
 
