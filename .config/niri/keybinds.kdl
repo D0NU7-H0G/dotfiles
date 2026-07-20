@@ -1,0 +1,11 @@
+// keybinds managed by niri-settings. Consider moving existing binds here.
+binds {
+    Mod+A { focus-column-left; }
+    Mod+S { focus-window-or-workspace-down; }
+    Mod+W { focus-window-or-workspace-up; }
+    Mod+D { focus-column-right; }
+    Mod+Ctrl+A { move-column-left; }
+    Mod+Ctrl+D { move-column-right; }
+    Mod+Ctrl+W { move-column-to-workspace-up; }
+    Mod+Ctrl+S { move-column-to-workspace-down; }
+}
