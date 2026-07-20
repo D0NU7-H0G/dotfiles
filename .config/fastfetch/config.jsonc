@@ -1,0 +1,117 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "auto",
+    "source": "arch",
+    "padding": {
+      "top": 0,
+      "right": 3
+    },
+    "color": {
+      "1": "#00D1FF",
+      "2": "#BD93F9"
+    }
+  },
+  "display": {
+    "separator": " : ",
+    "key": {
+      "width": 0
+    }
+  },
+  "modules": [
+    {
+      "type": "title",
+      "key": "     ",
+      "format": "{1} @ {2}"
+    },
+    {
+      "type": "custom",
+      "format": "   ╭───────────────────────────────────╮"
+    },
+    {
+      "type": "os",
+      "key": "     󰣇 OS      ",
+      "keyColor": "38;5;205"
+    },
+    {
+      "type": "host",
+      "key": "      Device  ",
+      "format": "{2}",
+      "keyColor": "38;5;31"
+    },
+    {
+      "type": "kernel",
+      "key": "      Kernel  ",
+      "keyColor": "38;5;135"
+    },
+    {
+      "type": "packages",
+      "key": "     󰏖 Packages",
+      "keyColor": "38;5;177"
+    },
+    {
+      "type": "terminal",
+      "key": "     󰞷 Terminal",
+      "keyColor": "38;5;218"
+    },
+    {
+      "type": "wm",
+      "key": "     󱂬 WM      ",
+      "keyColor": "38;5;87"
+    },
+    {
+      "type": "custom",
+      "format": "   ╰───────────────────────────────────╯"
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "   ╭──────────────────────────────────────────╮"
+    },
+    {
+      "type": "cpu",
+      "key": "     󰻠 CPU     ",
+      "keyColor": "38;5;205",
+      "format": "{1}"
+    },
+    {
+      "type": "gpu",
+      "key": "     󰢮 GPU     ",
+      "keyColor": "38;5;31",
+      "format": "{2}"
+    },
+    {
+      "type": "memory",
+      "key": "     󰍛 Memory  ",
+      "keyColor": "38;5;135"
+    },
+    {
+      "type": "display",
+      "key": "     󰹑 Display ",
+      "keyColor": "38;5;177",
+      "format": "{width}x{height} @ {refresh-rate} Hz"
+    },
+    {
+      "type": "command",
+      "key": "      OS Age  ",
+      "text": "birthd=$(stat -c %W /); echo $(( ( $(date +%s) - birthd ) / 86400 )) days",
+      "keyColor": "38;5;218"
+    },
+    {
+      "type": "uptime",
+      "key": "     󰅐 Uptime  ",
+      "keyColor": "38;5;87"
+    },
+    {
+      "type": "custom",
+      "format": "   ╰──────────────────────────────────────────╯"
+    },
+    "break",
+    {
+      "type": "colors",
+      "symbol": "circle",
+      "paddingLeft": 5
+    },
+    "break"
+  ]
+}
