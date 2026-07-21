@@ -168,9 +168,9 @@ cursor {
 // Ask apps to drop their own titlebars; carrot draws the borders.
 prefer-no-csd
 
-// Programs that start with the session:
-// spawn-at-startup "quickshell"
-// spawn-sh-at-startup "wl-paste --watch cliphist store"
+spawn-at-startup "waybar"
+spawn-at-startup "swaybg" "-i" "/home/elsie/.local/share/swaybg/background.jpg" "-m" "fill"
+spawn-at-startup "clipse" "-listen"
 
 // Session environment; #null unsets a variable:
 // environment {
@@ -234,29 +234,25 @@ prefer-no-csd
 binds {
     Mod+T title="Open a terminal" { spawn "kitty"; }
     Mod+Space title="App launcher" { spawn "fuzzel"; }
+    Mod+Alt+L title="Lock the screen" { spawn "swaylock"; }
+    Mod+Shift+S title="Take a screenshot" { spawn "flameshot" "gui"; }
+    Mod+Alt+V {spawn-sh "pgrep clipse >/dev/null 2>&1 && killall clipse || kitty --class=clipse clipse"; }
+    
     Mod+Q title="Close window" { close-window; }
-    Mod+F title="Fullscreen" { toggle-fullscreen; }
+    Mod+F { toggle=full-width; }
+    Mod+Shift+F title="Fullscreen" { toggle-fullscreen; }
     Mod+V title="Float / tile" { toggle-floating; }
     Mod+Shift+E title="Quit carrot" { quit; }
 
-    // Focus moves by direction; arrows and home row both work.
-    Mod+Left { focus-left; }
-    Mod+Right { focus-right; }
-    Mod+Up { focus-up; }
-    Mod+Down { focus-down; }
-    Mod+H { focus-left; }
-    Mod+J { focus-down; }
-    Mod+K { focus-up; }
-    Mod+L { focus-right; }
-    // Same directions with Shift trade the two windows' slots.
-    Mod+Shift+Left { swap-left; }
-    Mod+Shift+Right { swap-right; }
-    Mod+Shift+Up { swap-up; }
-    Mod+Shift+Down { swap-down; }
-    Mod+Shift+H { swap-left; }
-    Mod+Shift+J { swap-down; }
-    Mod+Shift+K { swap-up; }
-    Mod+Shift+L { swap-right; }
+    Mod+A { focus-left; }
+    Mod+D { focus-right; }
+    Mod+W { focus-up; }
+    Mod+S { focus-down; }
+    
+    Mod+Ctrl+A { swap-left; }
+    Mod+Ctrl+D { swap-right; }
+    Mod+Ctrl+W { swap-up; }
+    Mod+Ctrl+S { swap-down; }
     // Cycle through the workspace in map order.
     Mod+Tab { focus-next; }
     Mod+Shift+Tab { focus-prev; }
@@ -271,19 +267,16 @@ binds {
 
     // Column verbs for the scrolling layout, ready to uncomment;
     // they sit idle on a dwindle workspace.
-    Mod+T title="Toggle layout" { set-layout "toggle"; }
+    Mod+G title="Toggle layout" { set-layout "toggle"; }
     // consume-or-expel pulls the neighbor window into the focused
     // column - two windows stacked - or pops the focused one back
     // out into its own; focus-up/down walks the stack.
-    // Mod+BracketLeft { consume-or-expel-left; }
-    // Mod+BracketRight { consume-or-expel-right; }
+    Mod+BracketLeft { consume-or-expel-left; }
+    Mod+BracketRight { consume-or-expel-right; }
     // Whole columns trade places along the strip:
-    // Mod+Ctrl+Left { move-column-left; }
-    // Mod+Ctrl+Right { move-column-right; }
-    // Mod+R { cycle-column-width; }
+    Mod+R { cycle-column-width; }
     // Mod+Shift+R { cycle-column-width-back; }
-    // Mod+W { toggle-full-width; }
-    // Mod+C { center-column; }
+    Mod+C { center-column; }
 
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
@@ -307,10 +300,6 @@ binds {
     // "+N"/"-N" jump relative to the active workspace, wrapping.
     Mod+PageDown { focus-workspace "+1"; }
     Mod+PageUp { focus-workspace "-1"; }
-
-    // Screenshots want grim; the region shot also slurp + wl-clipboard.
-    Print title="Screenshot" { spawn-sh "mkdir -p ~/Pictures/Screenshots && grim ~/Pictures/Screenshots/$(date +%F_%H-%M-%S).png"; }
-    Mod+Shift+S title="Region to clipboard" { spawn-sh #"grim -g "$(slurp)" - | wl-copy"#; }
 
     XF86AudioRaiseVolume allow-when-locked=#true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
     XF86AudioLowerVolume allow-when-locked=#true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
