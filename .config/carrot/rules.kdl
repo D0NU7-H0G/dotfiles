@@ -1,0 +1,92 @@
+// -- rules --
+// Matchers are regexes. Properties inside one match AND together,
+// several match lines OR, excludes veto.
+// docs: https://carrotwm.org/docs/window-rules/
+
+// The full rule vocabulary: open-floating, open-on-workspace,
+// open-centered, default-size, opacity, allow-tearing, rounding,
+// shadow, dim, blur, no-anim, no-capture, animation.
+
+// === Block captures ===
+
+window-rule {
+    match app-id=#"^discord$"#
+    // screenshares, recordings and screenshots see a black box:
+    no-capture
+}
+
+layer-rule {
+    match namespace=#"^notifications$"#
+    no-capture
+}
+
+// === Set floating windows ===
+
+window-rule {
+    match app-id=#"firefox"# title=#"(?i)picture.in.picture"#
+    open-floating #true
+    default-size 640 360
+}
+
+window-rule {
+    match app-id=#"^clipse$"#
+    match app-id=#"^calcure$"#
+    open-floating #true
+    default-size 800 550
+}
+
+window-rule {
+    match app-id=#"flameshot"#
+    open-floating #true
+    no-anim
+}
+
+// === Set bg effects ===
+
+layer-rule {
+    match namespace=#"^launcher$"#
+    blur #true
+    // backdrop only where the surface's own alpha reaches the gate;
+    // argb surfaces only (xrgb reads as fully opaque)
+    ignore-alpha 0.1
+    // shells that remap layers on state changes: skip open/close styles
+    no-anim
+}
+
+window-rule {
+    match app-id=#"^deadbeef$"#
+    opacity 0.83
+    blur #true
+}
+
+window-rule {
+    match-app-id=#"org.kde.dolphin"#
+    opacity 0.88
+    blur #true
+}
+
+// === Set workspaces ===
+
+window-rule {
+    match app-id=#"^firefox$"#
+    open-on-workspace 1
+}
+
+window-rule {
+    match app-id=#"discord"#
+    match app-id=#"^deadbeef$"#
+    open-on-workspace 2
+}
+
+window-rule {
+    match app-id=#"^cs2$"#
+    match app-id=#"^steam$"#
+    match app-id=#"org.prismlauncher.PrismLauncher"#
+    open-on-workspace 3
+}
+
+// Per-window key remaps, for games that hardcode their keys:
+// remap "example-game" {
+//     match app-id="steam_app_250900"
+//     map "Alt_R" "Left"
+// }
