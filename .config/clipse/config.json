@@ -46,7 +46,7 @@
         "Keychain Access"
     ],
     "autoPaste": {
-        "enabled": false,
+        "enabled": true,
         "keybind": "ctrl+v",
         "buffer": 10
     },
