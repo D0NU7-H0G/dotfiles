@@ -51,7 +51,7 @@
     "format": "{:%I:%M %p}",
     "format-alt": "{:%A %d/%m/%Y}",
     "tooltip-format": "<span>{calendar}</span>",
-    "on-click-right": "niri msg action spawn-sh pgrep calcure >/dev/null 2>&1 && killall calcure || kitty --class=calcure calcure"
+    "on-click-right": "pgrep calcure >/dev/null 2>&1 && killall calcure || niri msg action spawn -- kitty --class=calcure calcure"
   },
   "network": {
     "format-icons": [
