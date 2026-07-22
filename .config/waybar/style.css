@@ -127,11 +127,6 @@ opacity: 1;
 #network,
 #bluetooth,
 #pulseaudio,
-#custom-screenrecording-indicator,
-#custom-idle-indicator,
-#custom-notification-silencing-indicator,
-#custom-voxtype,
-
 #mpris:hover,
 #window:hover,
 #clock:hover {
@@ -204,21 +199,6 @@ tooltip {
   border-radius: 15px;
   background: rgba(38, 35, 58, 0.85);
   border: 2px solid alpha(@foreground, .5);
-}
-
-#custom-screenrecording-indicator {
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  color: transparent;
-}
-
-#custom-screenrecording-indicator.active {
-  background-color: alpha(@foreground, .2);
-  padding: 0 13px 0 10px;
-  color: #eb7087;
-  animation-name: blink-recording;
-  animation-duration: 0.5s;
 }
 
 #pulseaudio-slider {
