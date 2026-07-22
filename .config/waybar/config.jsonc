@@ -140,7 +140,7 @@
     "tooltip": false
   },
   "custom/separator": {
-    "format": "|",
+    "format": "󱪼",
     "tooltip": false
   },
   "tray": {
