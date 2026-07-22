@@ -62,7 +62,7 @@ input {
 // docs: https://carrotwm.org/docs/workspaces/
 
 output "DP-1" {
-    mode "2560x1080@100.002"
+    mode "2560x1080@100"
     scale 1
     position x=0 y=0
 }
@@ -236,10 +236,10 @@ binds {
     Mod+Space title="App launcher" { spawn "fuzzel"; }
     Mod+Alt+L title="Lock the screen" { spawn "swaylock"; }
     Mod+Shift+S title="Take a screenshot" { spawn "flameshot" "gui"; }
-    Mod+Alt+V {spawn-sh "pgrep clipse >/dev/null 2>&1 && killall clipse || kitty --class=clipse clipse"; }
+    Mod+Alt+V { spawn-sh "pgrep clipse >/dev/null 2>&1 && killall clipse || kitty --class=clipse clipse"; }
     
     Mod+Q title="Close window" { close-window; }
-    Mod+F { toggle=full-width; }
+    Mod+F { toggle-full-width; }
     Mod+Shift+F title="Fullscreen" { toggle-fullscreen; }
     Mod+V title="Float / tile" { toggle-floating; }
     Mod+Shift+E title="Quit carrot" { quit; }
