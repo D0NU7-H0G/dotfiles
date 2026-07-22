@@ -122,9 +122,16 @@ opacity: 1;
 #clock {
   margin: 0px 0px 0px 0px;
 }
-#cpu,
+#cpu {
+  margin: 0px;
+}
 #battery,
-#network,
+#network {
+  margin: 0px 6px 0px 6px;
+}
+#network:hover {
+  margin: 0px 6px 0px 6px;
+}
 #bluetooth,
 #pulseaudio,
 #mpris:hover,
@@ -133,18 +140,24 @@ opacity: 1;
   margin: 0px 0px 0px 0px;
 }
 #backlight:hover,
-#cpu:hover,
-#network:hover,
+#cpu:hover {
+  margin: 0px
+}
 #bluetooth:hover,
-#pulseaudio:hover,
-
+#pulseaudio:hover {
+  margin: 0px
+}
 #custom-expand-icon {
-  margin-right: 7px;
+  margin-right: 0px;
   padding: 0px 10px;
   border-radius: 15px;
 }
-
-#tray,
+#custom-expand-icon:hover {
+  margin: 0px;
+}
+#tray {
+  margin: 0px 4px;
+}
 #memory,
 #custom-weather {
   background-color: transparent;
@@ -167,15 +180,14 @@ opacity: 1;
 #window {
   border-radius: 15px; 
   padding: 5px 10px;   
-  margin-right: 0px;   
+  margin: 0px;   
 }
-
-#window {
-  margin-left: 5px;   
+#window:hover {
+  margin: 0px 0px 0px 0px;
 }
 
 #tray-expander {
-  padding: 0 0 0 1px;
+  padding: 0 0 0 0px;
   margin-left: 0px;
   border-radius: 15px;
   background-color: transparent;

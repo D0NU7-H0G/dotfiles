@@ -124,17 +124,23 @@
   "group/tray-expander": {
     "orientation": "inherit",
     "drawer": {
-      "transition-duration": 600,
+      "transition-duration": 400,
       "children-class": "tray-group-item"
     },
     "modules": [
       "custom/expand-icon",
+      "custom/separator",
       "tray",
+      "custom/separator",
       "memory"
     ]
   },
   "custom/expand-icon": {
     "format": "",
+    "tooltip": false
+  },
+  "custom/separator": {
+    "format": "|",
     "tooltip": false
   },
   "tray": {
