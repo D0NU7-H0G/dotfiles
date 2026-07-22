@@ -1,6 +1,20 @@
+-- === USER SETTINGS === --
+
+-- quit nvim if nvimtree is only remaining window
+vim.api.nvim_create_autocmd("BufEnter", {
+  nested = true,
+  callback = function()
+    local api = require("nvim-tree.api")
+    if #vim.api.nvim_list_wins() == 1 and api.tree.is_visible() then
+      vim.cmd.quit()
+    end
+  end
+})
+
+-- copy yanks to system clipboard
 vim.opt.clipboard = "unnamedplus"
 
--- Theme --
+-- === THEME === --
 
 vim.pack.add({
   {
