@@ -1,1 +1,4 @@
 * -linguist-vendored -linguist-generated -linguist-documentation linguist-detectable
+^.gitattributes$ -linguist-detectable
+^.gitignore$ -linguist-detectable
+^LICENSE$ -linguist-detectable
