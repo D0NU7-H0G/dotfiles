@@ -1,1 +1,1 @@
-* linguist-vendored=false linguist-generated=false linguist-documentation=false
+* -linguist-vendored -linguist-generated -linguist-documentation linguist-detectable
