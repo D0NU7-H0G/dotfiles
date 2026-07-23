@@ -1,2 +1,2 @@
 .config/** -linguist-vendored -linguist-generated -linguist-documentation linguist-detectable
-*.jsonc linguist-language=jsonc
+*.jsonc linguist-language=jsonc linguist-detectable
