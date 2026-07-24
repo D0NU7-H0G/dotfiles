@@ -164,12 +164,12 @@
   },
   "mpris": {
     "format": "{player_icon} {artist} - {title}",
-    "format-paused": "{status_icon} <i>{artist} - {title}</i>",
+    "format-paused": "{status_icon} <i>{artist} - {title} ({position}/{length})</i>",
     "ignored-players": [
       "chromium",
       "firefox"
     ],
-    "max-length": 35,
+    "max-length": 45,
     "player-icons": {
       "default": "🎵",
       "mpv": "🎵"
