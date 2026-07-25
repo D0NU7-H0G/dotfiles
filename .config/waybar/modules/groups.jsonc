@@ -2,7 +2,7 @@
   "group/distro-group": {
     "orientation": "horizontal",
     "drawer": {
-      "transition-duration": 650,
+      "transition-duration": 400,
       "transition-left-to-right": true
     },
     "modules": [
