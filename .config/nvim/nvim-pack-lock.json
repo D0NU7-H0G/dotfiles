@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "cord.nvim": {
+      "rev": "012dcf6d0507e1525a682b46d6de2188fd68980c",
+      "src": "https://github.com/vyfor/cord.nvim"
+    },
     "mini.nvim": {
       "rev": "c594be5b095204e99473825ec2dee872e7409a4d",
       "src": "https://github.com/nvim-mini/mini.nvim"

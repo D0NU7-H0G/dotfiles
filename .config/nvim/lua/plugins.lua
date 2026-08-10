@@ -1,6 +1,6 @@
 -- === PLUGINS === --
 
--- Nvim treesitter --
+-- Treesitter --
 vim.pack.add({
   'https://github.com/nvim-treesitter/nvim-treesitter',
   'https://github.com/nvim-mini/mini.nvim',            -- if you use the mini.nvim suite
@@ -8,7 +8,7 @@ vim.pack.add({
   -- 'https://github.com/nvim-tree/nvim-web-devicons', -- if you prefer nvim-web-devicons
   'https://github.com/MeanderingProgrammer/render-markdown.nvim',
 })
--- Nvim render markdown --
+-- Render markdown --
 require('render-markdown').setup({
   latex = {
     enabled = true,
@@ -21,6 +21,20 @@ require('render-markdown').setup({
     top_pad = 0,
     bottom_pad = 0,
     },
+})
+
+-- Cord (Discord RPC)
+vim.pack.add { 'https://github.com/vyfor/cord.nvim' }
+
+require('cord').setup ({
+  text = {
+    workspace = function(opts)
+      if opts.workspace == 'elsie' then
+	return 'In $HOME'
+      end
+      return 'In ' .. opts.workspace
+    end,
+  }
 })
 
 -- Nvim tree --
