@@ -1,3 +1,5 @@
+require("plugins")
+
 -- === USER SETTINGS === --
 
 -- quit nvim if nvimtree is only remaining window
@@ -13,6 +15,13 @@ vim.api.nvim_create_autocmd("BufEnter", {
 
 -- copy yanks to system clipboard
 vim.opt.clipboard = "unnamedplus"
+
+-- open nvimtree on start
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    require("nvim-tree.api").tree.open()
+  end,
+})
 
 -- === THEME === --
 
@@ -30,51 +39,6 @@ require("rose-pine").setup({
   extend_background_behind_borders = true,
 })
 vim.cmd("colorscheme rose-pine")
-
--- === PLUGINS === --
-
-vim.pack.add({
-  'https://github.com/nvim-treesitter/nvim-treesitter',
-  'https://github.com/nvim-mini/mini.nvim',            -- if you use the mini.nvim suite
-  -- 'https://github.com/nvim-mini/mini.icons',        -- if you use standalone mini plugins
-  -- 'https://github.com/nvim-tree/nvim-web-devicons', -- if you prefer nvim-web-devicons
-  'https://github.com/MeanderingProgrammer/render-markdown.nvim',
-})
-require('render-markdown').setup({
-  latex = {
-    enabled = true,
-    render_modes = false,
-    converter = { 'utftex', 'latex2text' },
-    inline = true,
-    block = true,
-    highlight = 'RenderMarkdownMath',
-    position = 'center',
-    top_pad = 0,
-    bottom_pad = 0,
-    },
-})
-
-vim.pack.add({
-  { src = 'https://github.com/nvim-tree/nvim-web-devicons' }, -- optional
-  { src = 'https://github.com/nvim-tree/nvim-tree.lua' },
-})
-
-  -- disable netrw at the very start of your init.lua
-  vim.g.loaded_netrw = 1
-  vim.g.loaded_netrwPlugin = 1
-
-  -- optionally enable 24-bit colour
-  vim.opt.termguicolors = true
-
-  -- empty setup using defaults
-  require("nvim-tree").setup()
-
-
-vim.api.nvim_create_autocmd("VimEnter", { -- opens nvimtree on start
-  callback = function()
-    require("nvim-tree.api").tree.open()
-  end,
-})
 
 -- === LAZYNVIM === --
 
@@ -104,9 +68,55 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-    -- add your plugins here
+    -- Blink --
+    {
+      'saghen/blink.cmp',
+      dependencies = {
+        'saghen/blink.lib',
+        -- optional: provides snippets for the snippet source
+        'rafamadriz/friendly-snippets',
+      },
+      build = function()
+        -- build the fuzzy matcher, optionally add a timeout to `pwait(timeout_ms)`
+        -- you can use `gb` in `:Lazy` to rebuild the plugin as needed
+        require('blink.cmp').build():pwait()
+      end,
+
+      ---@module 'blink.cmp'
+      ---@type blink.cmp.Config
+      opts = {
+        -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
+        -- 'super-tab' for mappings similar to vscode (tab to accept)
+        -- 'enter' for enter to accept
+        -- 'none' for no mappings
+        --
+        -- All presets have the following mappings:
+        -- C-space: Open menu or open docs if already open
+        -- C-n/C-p or Up/Down: Select next/previous item
+        -- C-e: Hide menu
+        -- C-k: Toggle signature help (if signature.enabled = true)
+        --
+        -- See :h blink-cmp-config-keymap for defining your own keymap
+        keymap = { preset = 'default' },
+
+        -- (Default) Only show the documentation popup when manually triggered
+        completion = { documentation = { auto_show = false } },
+
+        -- (Default) list of enabled providers defined so that you can extend it
+        -- elsewhere in your config, without redefining it, due to `opts_extend`
+        sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
+
+        -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
+        -- You may use a lua implementation instead by using `implementation = "lua"`
+        -- See the fuzzy documentation for more information
+        fuzzy = { implementation = "rust" }
+      },
+    },
   },
   -- Configure any other settings here. See the documentation for more details.
+  performance = {
+    rtp = { reset = false },
+  },
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "habamax" } },
   -- automatically check for plugin updates
