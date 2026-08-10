@@ -3,7 +3,7 @@ require("plugins")
 -- === USER SETTINGS === --
 
 -- quit nvim if nvimtree is only remaining window
-vim.api.nvim_create_autocmd("BufEnter", {
+--[[vim.api.nvim_create_autocmd("BufEnter", {
   nested = true,
   callback = function()
     local api = require("nvim-tree.api")
@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
       vim.cmd.quit()
     end
   end
-})
+})--]]
 
 -- copy yanks to system clipboard
 vim.opt.clipboard = "unnamedplus"
