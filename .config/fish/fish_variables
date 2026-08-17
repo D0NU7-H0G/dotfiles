@@ -1,3 +1,4 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export VISUAL:nvim
+SETUVAR --export XDG_CONFIG_HOME:/home/elsie/\x2econfig
