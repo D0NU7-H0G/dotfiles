@@ -286,6 +286,7 @@ layout {
 
 spawn-at-startup "waybar"
 spawn-at-startup "swaybg" "-i" "/home/elsie/.local/share/swaybg/background.jpg" "-m" "fill"
+spawn-sh-at-startup "swayidle -w timeout 480 'swaylock -f' timeout 720 'niri msg action power-off-monitors'"
 spawn-at-startup "clipse" "-listen"
 spawn-at-startup "equicord"
 // spawn-at-startup "nirinit"
