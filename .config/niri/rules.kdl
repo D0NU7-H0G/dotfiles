@@ -98,6 +98,7 @@ window-rule {
 window-rule {
     match app-id="^cs2$"
     match app-id="^steam$"
+    match app-id="^steam_app_714010$"
     open-on-workspace "3"
 }
 
