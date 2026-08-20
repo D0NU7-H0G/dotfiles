@@ -2,3 +2,4 @@
 # VERSION: 3.0
 SETUVAR --export VISUAL:nvim
 SETUVAR --export XDG_CONFIG_HOME:/home/elsie/\x2econfig
+SETUVAR fish_user_paths:/home/elsie/\x2ecargo/bin
