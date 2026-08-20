@@ -4,6 +4,10 @@
       "rev": "012dcf6d0507e1525a682b46d6de2188fd68980c",
       "src": "https://github.com/vyfor/cord.nvim"
     },
+    "fff": {
+      "rev": "d5b4abd2ac22ba42a787c07b6c5d21b76918262f",
+      "src": "https://github.com/dmtrKovalenko/fff"
+    },
     "mini.nvim": {
       "rev": "c594be5b095204e99473825ec2dee872e7409a4d",
       "src": "https://github.com/nvim-mini/mini.nvim"
