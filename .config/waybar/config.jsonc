@@ -43,7 +43,7 @@
     "on-click-right": "kitty"
   },
   "clock": {
-    "timezone": "Asia/Singapore",
+    "timezone": "America/Vancouver",
     "format": "{:%I:%M %p}",
     "format-alt": "{:%A %d/%m/%Y}",
     "tooltip-format": "<span>{calendar}</span>",
