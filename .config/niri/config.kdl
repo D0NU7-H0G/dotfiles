@@ -112,6 +112,13 @@ output "DP-1" {
     position x=1280 y=0
 }
 
+output "DP-4" {
+    mode "2560x1440@180.001"
+    scale 1
+    transform "normal"
+    position x=1280 y=0
+}
+
 // Make the wallpaper stationary, rather than moving with workspaces.
 layer-rule {
     // This is for swaybg; change for other wallpaper tools.
