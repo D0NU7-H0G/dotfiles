@@ -181,7 +181,8 @@
     "format-paused": "{status_icon} <i>{artist} - {title} ({position}/{length})</i>",
     "ignored-players": [
       "chromium",
-      "firefox"
+      "firefox",
+      "vlc"
     ],
     "max-length": 45,
     "player-icons": {
