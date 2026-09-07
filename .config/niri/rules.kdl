@@ -100,6 +100,7 @@ window-rule {
     match app-id="^steam$"
     match app-id="^steam_app_714010$"
     match app-id="^steam_app_960090$"
+    match app-id="^Minecraft *"
     open-on-workspace "3"
 }
 
