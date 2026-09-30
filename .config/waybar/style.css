@@ -125,7 +125,9 @@ opacity: 1;
 #network:hover {
   margin: 0px 6px 0px 6px;
 }
-#bluetooth,
+#bluetooth {
+  margin: 0px 0px 0px 6px;
+}
 #pulseaudio,
 #mpris:hover,
 #window:hover,
@@ -136,7 +138,9 @@ opacity: 1;
 #cpu:hover {
   margin: 0px
 }
-#bluetooth:hover,
+#bluetooth:hover {
+  margin: 0px 0px 0px 6px;
+}
 #pulseaudio:hover {
   margin: 0px
 }
