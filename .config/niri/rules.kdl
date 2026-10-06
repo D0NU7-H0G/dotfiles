@@ -22,7 +22,7 @@ window-rule {
 window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
-    match app-id=r#"discord"#
+    match app-id=r#"^discord$"#
 
     // block-out-from "screen-capture"
     block-out-from "screencast"
@@ -53,8 +53,8 @@ window-rule {
 
 window-rule {
     match app-id="flameshot"
-    open-fullscreen false
-    open-floating true
+    open-fullscreen true
+    open-floating false
 }
 
 window-rule {
