@@ -101,7 +101,8 @@ window-rule {
     match app-id="^steam_app_714010$"
     match app-id="^steam_app_960090$"
     match app-id="^steam_app_1422450$" // deadlock
-    match app-id="^Minecraft *"
+    match title=r#"^Minecraft *"#
+    match app-id="com.mojang.minecraft"
     match app-id="^waywall$"
     open-on-workspace "3"
 }
