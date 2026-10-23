@@ -98,9 +98,7 @@ window-rule {
 window-rule {
     match app-id="^cs2$"
     match app-id="^steam$"
-    match app-id="^steam_app_714010$"
-    match app-id="^steam_app_960090$"
-    match app-id="^steam_app_1422450$" // deadlock
+    match app-id="^steam_app_*"
     match title=r#"^Minecraft *"#
     match app-id="com.mojang.minecraft"
     match app-id="^waywall$"
