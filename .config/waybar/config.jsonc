@@ -195,6 +195,10 @@
   },
   "niri/window": {
     "format": "{}",
+    "rewrite": {
+      "(.*) (?:— Mozilla Firefox|Mozilla Firefox Private Browsing)$": "Mozilla Firefox",
+      "(@.*) - Discord$": "Direct Messages - Discord"
+    },
     "max-length": 45
   }
 }
